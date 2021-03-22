@@ -28,11 +28,10 @@ class SignInPage extends StatelessWidget {
         // "stretch là nó kéo căng toàn màn hình theo chiều ngang"
 
         children: [
-          Container(
-            color: Colors.red,
-            child: SizedBox(
-              height: 100,
-            ),
+          Text(
+            "Sign in",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
           ),
           SizedBox(height: 10),
           Container(

@@ -35,26 +35,15 @@ class SignInPage extends StatelessWidget {
             style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.w600),
           ),
           SizedBox(height: 10),
-          // ignore: deprecated_member_use
-          RaisedButton(
+          CustomRaisedButton(
             child: Text(
               'Sign in with Google',
               style: TextStyle(color: Colors.black87, fontSize: 16),
             ),
             color: Colors.white,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(4.0))),
+            borderRadius: 4.0,
             onPressed: () {},
-          ),
-          SizedBox(height: 2),
-          // ignore: deprecated_member_use
-          CustomRaisedButton(
-            child: Text(
-              'Sign in with Facebook',
-              style: TextStyle(color: Colors.black87, fontSize: 16),
-            ),
-            color: Colors.red,
-          ),
+          )
         ],
       ),
     );

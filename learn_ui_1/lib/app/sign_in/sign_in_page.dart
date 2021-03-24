@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_ui_1/app/sign_in/sign_in_button.dart';
 import 'package:learn_ui_1/common_widgets/custom_raised_button.dart';
 
 class SignInPage extends StatelessWidget {
@@ -43,6 +44,15 @@ class SignInPage extends StatelessWidget {
             color: Colors.white,
             borderRadius: 4.0,
             onPressed: () {},
+          ),
+          SizedBox(
+            height: 2,
+          ),
+          SignInButton(
+            text: 'Sign in with Google',
+            textColor: Colors.black87,
+            color: Colors.white,
+            onpressed: () {},
           )
         ],
       ),

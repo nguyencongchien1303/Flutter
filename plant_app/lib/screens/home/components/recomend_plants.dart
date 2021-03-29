@@ -64,6 +64,7 @@ class RecomendPlantCard extends StatelessWidget {
             onTap: press,
             child: Container(
               padding: EdgeInsets.all((kDefaultPadding / 2)),
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(

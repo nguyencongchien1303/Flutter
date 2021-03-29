@@ -23,6 +23,7 @@ class Body extends StatelessWidget {
             text: "Recomended",
             press: () {},
           ),
+          RecomendsPlants(),
         ],
       ),
     );

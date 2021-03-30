@@ -19,7 +19,7 @@ class BodyWhiteInput extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginBloc bloc = new LoginBloc();
     ChangeInOut blocInOut = new ChangeInOut();
-    final _emailController = TextEditingController();
+    final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passController = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Container(
@@ -37,61 +37,56 @@ class BodyWhiteInput extends StatelessWidget {
                 offset: Offset(0, 3))
           ]),
       child: SizedBox(
-        height: size.height * 0.6,
+        // height: size.height * 0.6,
         child: Stack(
           children: [
             BodyBoxWhite(),
             Container(
-                child: StreamBuilder(
-              builder: (context, snapshort) => Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  HeaderSignInAndSignUp(),
-                  !snapshort.hasError
-                      ? SizedBox(
-                          height: 20,
-                        )
-                      : SizedBox(
-                          height: 0,
-                        ),
-                  StreamBuilder(
-                    stream: bloc.phoneNumberStream,
-                    builder: (context, snapshot) => InputPhoneNumber(
-                      emailController: _emailController,
-                      snapshotHasError: snapshot.hasError,
-                      snapshotError: snapshot.error,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  StreamBuilder(
-                    stream: bloc.passwordStream,
-                    builder: (context, snapshot) =>
-                        InputPassword(passController: _passController),
-                  ),
-                  RememberAndForgot(),
-                  RoundedButton(
-                    text: "Sign In",
-                    press: () {
-                      if (bloc.isValidInfo(
-                          _emailController.text, _passController.text)) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BodyAccount(),
+              child: StreamBuilder(
+                builder: (context, snapshort) => Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HeaderSignInAndSignUp(),
+                    Column(
+                      children: [
+                        StreamBuilder(
+                          stream: bloc.phoneNumberStream,
+                          builder: (context, snapshot) => InputPhoneNumber(
+                            emailController: _emailController,
+                            snapshotHasError: snapshot.hasError,
+                            snapshotError: snapshot.error,
                           ),
-                        );
-                      }
-                    },
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-                  NoteBottom()
-                ],
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        StreamBuilder(
+                          stream: bloc.passwordStream,
+                          builder: (context, snapshot) =>
+                              InputPassword(passController: _passController),
+                        ),
+                        RememberAndForgot(),
+                        RoundedButton(
+                          text: "Sign In",
+                          press: () {
+                            if (bloc.isValidInfo(
+                                _emailController.text, _passController.text)) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BodyAccount(),
+                                ),
+                              );
+                            }
+                          },
+                        ),
+                      ],
+                    ),
+                    NoteBottom()
+                  ],
+                ),
               ),
-            )),
+            ),
           ],
         ),
       ),

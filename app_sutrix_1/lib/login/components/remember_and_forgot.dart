@@ -10,9 +10,10 @@ class RememberAndForgot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:
-          const EdgeInsets.symmetric(horizontal: kDefaultPaddin, vertical: 7),
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width * 0.85,
+      padding: const EdgeInsets.symmetric(vertical: 7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,7 +23,7 @@ class RememberAndForgot extends StatelessWidget {
                 CheckBoxRemember(),
                 Container(
                   child: Text("Remember me"),
-                  // margin: EdgeInsets.only(right: 40),
+                  margin: EdgeInsets.only(left: 5),
                 ),
               ],
             ),

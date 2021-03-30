@@ -46,7 +46,7 @@ class _SignInAndSignUpState extends State<HeaderSignInAndSignUp> {
                   color: selectedIndex == index ? kTextColor : kTextLightColor),
             ),
             Container(
-              margin: EdgeInsets.only(top: kDefaultPaddin / 4),
+              margin: EdgeInsets.only(top: kDefaultPaddin / 6),
               height: 4,
               width: 30,
               color: selectedIndex == index

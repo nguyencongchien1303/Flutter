@@ -8,6 +8,7 @@ class NoteBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: kDefaultPaddin / 2),
       child: Column(
         children: [
           Row(

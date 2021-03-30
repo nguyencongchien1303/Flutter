@@ -1,5 +1,5 @@
-import 'package:app_sutrix_1/UI/constants.dart';
-import 'package:app_sutrix_1/UI/login/login_screen.dart';
+import 'package:app_sutrix_1/constants.dart';
+import 'package:app_sutrix_1/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

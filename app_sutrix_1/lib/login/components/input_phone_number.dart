@@ -2,18 +2,17 @@ import 'package:app_sutrix_1/components/rounded_input_field.dart';
 import 'package:flutter/material.dart';
 
 class InputPhoneNumber extends StatelessWidget {
-  final bool snapshotHasError;
-  final String snapshotError;
+  final AsyncSnapshot<dynamic> snapshot;
   final emailController;
   const InputPhoneNumber({
     Key key,
     @required this.emailController,
-    this.snapshotHasError,
-    this.snapshotError,
+    this.snapshot,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // print(snapshot);
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,8 +21,7 @@ class InputPhoneNumber extends StatelessWidget {
           RoundedInputField(
               hintText: "Enter your phone number",
               onChanged: (value) {},
-              snapshotHasError: snapshotHasError,
-              snapshotError: snapshotError,
+              snapshot: snapshot,
               emailController: emailController),
         ],
       ),

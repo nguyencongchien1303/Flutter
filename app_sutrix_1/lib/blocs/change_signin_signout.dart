@@ -5,14 +5,14 @@ class ChangeInOut {
 
   Stream get changeInOutStream => _changeInOutController.stream;
 
-  bool isChangeInOut(int changeInOutController) {
-    // print(changeInOutController);
-    if (changeInOutController == 1) {
-      _changeInOutController.sink.addError("background black");
-      print(_changeInOutController);
+  bool isChangeInOut(int changeInOut) {
+    if (changeInOut == 1) {
+      print("a");
+      _changeInOutController.sink.add(false);
       return false;
     }
-    _changeInOutController.sink.add("background white");
+    print("b");
+    _changeInOutController.sink.add(true);
     return true;
   }
 

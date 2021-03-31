@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'text_field_container.dart';
 
 class RoundedInputField extends StatelessWidget {
-  final bool snapshotHasError;
-  final String snapshotError;
+  final AsyncSnapshot<dynamic> snapshot;
   final String hintText;
   final ValueChanged<String> onChanged;
   final emailController;
@@ -12,8 +11,7 @@ class RoundedInputField extends StatelessWidget {
     this.hintText,
     this.onChanged,
     this.emailController,
-    this.snapshotHasError,
-    this.snapshotError,
+    this.snapshot,
   }) : super(key: key);
 
   @override
@@ -25,9 +23,9 @@ class RoundedInputField extends StatelessWidget {
           decoration: InputDecoration(
             hintText: hintText,
             border: InputBorder.none,
-            errorText: snapshotHasError ? snapshotError : null,
+            errorText: snapshot.hasError ? snapshot.error : null,
           ),
         ),
-        errorSnapshot: snapshotHasError);
+        errorSnapshot: snapshot.hasError);
   }
 }

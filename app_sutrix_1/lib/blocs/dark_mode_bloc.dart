@@ -6,7 +6,7 @@ class DarkMode {
   Stream get darkModeStream => _darkModeController.stream;
 
   bool isDarkMode(bool darkModeController) {
-    print(darkModeController);
+    // print(darkModeController);
     if (!darkModeController) {
       _darkModeController.sink.addError("background black");
       return darkModeController;

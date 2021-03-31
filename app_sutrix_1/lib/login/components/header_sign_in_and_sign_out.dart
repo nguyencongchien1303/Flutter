@@ -4,15 +4,24 @@ import 'package:flutter/material.dart';
 import '../../constants.dart';
 
 class HeaderSignInAndSignUp extends StatefulWidget {
+  final ChangeInOut blocInOuta;
+  final AsyncSnapshot<dynamic> snapshot;
+  const HeaderSignInAndSignUp({
+    Key key,
+    this.snapshot,
+    this.blocInOuta,
+  }) : super(key: key);
   @override
   _SignInAndSignUpState createState() => _SignInAndSignUpState();
 }
 
 class _SignInAndSignUpState extends State<HeaderSignInAndSignUp> {
   List<String> categories = ["Sign In", "Sign Up"];
+
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    print(widget.snapshot.data);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: SizedBox(
@@ -26,12 +35,11 @@ class _SignInAndSignUpState extends State<HeaderSignInAndSignUp> {
   }
 
   Widget buildCategory(int index) {
-    ChangeInOut blocInOut = new ChangeInOut();
     return GestureDetector(
       onTap: () {
         setState(() {
           selectedIndex = index;
-          blocInOut.isChangeInOut(index);
+          widget.blocInOuta.isChangeInOut(selectedIndex);
         });
       },
       child: Padding(

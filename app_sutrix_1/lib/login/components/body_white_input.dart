@@ -21,6 +21,7 @@ class BodyWhiteInput extends StatelessWidget {
     ChangeInOut blocInOut = new ChangeInOut();
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passController = TextEditingController();
+    final TextEditingController textABC = TextEditingController();
     Size size = MediaQuery.of(context).size;
     return Container(
       height: size.height * 0.6,
@@ -43,45 +44,51 @@ class BodyWhiteInput extends StatelessWidget {
             BodyBoxWhite(),
             Container(
               child: StreamBuilder(
+                stream: blocInOut.changeInOutStream,
                 builder: (context, snapshort) => Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    HeaderSignInAndSignUp(),
-                    Column(
-                      children: [
-                        StreamBuilder(
-                          stream: bloc.phoneNumberStream,
-                          builder: (context, snapshot) => InputPhoneNumber(
-                            emailController: _emailController,
-                            snapshotHasError: snapshot.hasError,
-                            snapshotError: snapshot.error,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        StreamBuilder(
-                          stream: bloc.passwordStream,
-                          builder: (context, snapshot) =>
-                              InputPassword(passController: _passController),
-                        ),
-                        RememberAndForgot(),
-                        RoundedButton(
-                          text: "Sign In",
-                          press: () {
-                            if (bloc.isValidInfo(
-                                _emailController.text, _passController.text)) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => BodyAccount(),
-                                ),
-                              );
-                            }
-                          },
-                        ),
-                      ],
+                    HeaderSignInAndSignUp(
+                      blocInOuta: blocInOut,
+                      snapshot: snapshort,
                     ),
+                    if (snapshort.data == null || snapshort.data)
+                      Column(
+                        children: [
+                          StreamBuilder(
+                            stream: bloc.phoneNumberStream,
+                            builder: (context, snapshot) => InputPhoneNumber(
+                              emailController: _emailController,
+                              snapshot: snapshot,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          StreamBuilder(
+                            stream: bloc.passwordStream,
+                            builder: (context, snapshot) => InputPassword(
+                              passController: _passController,
+                              snapshot: snapshot,
+                            ),
+                          ),
+                          RememberAndForgot(),
+                          RoundedButton(
+                            text: "Sign In",
+                            press: () {
+                              if (bloc.isValidInfo(_emailController.text,
+                                  _passController.text)) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BodyAccount(),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ],
+                      ),
                     NoteBottom()
                   ],
                 ),

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "11031367994",
+    "project_id": "logn-in-up",
+    "storage_bucket": "logn-in-up.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11031367994:android:70cd58e8b4e0515707c003",
+        "android_client_info": {
+          "package_name": "com.example.login_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "11031367994-9n72vgsh147rhurmce2ddn2li9flsqgk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkEbK7hYzy61ukZrx2tLxqG8GQw1kttWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "11031367994-9n72vgsh147rhurmce2ddn2li9flsqgk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "11031367994-hsl5854astvgg2jj768aqahhnsk8475a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.loginFirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

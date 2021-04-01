@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
 class TextFieldContainer extends StatelessWidget {
-  final bool errorSnapshot;
   final Widget child;
   const TextFieldContainer({
     Key key,
     this.child,
-    this.errorSnapshot,
   }) : super(key: key);
 
   @override

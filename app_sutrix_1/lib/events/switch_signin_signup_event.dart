@@ -1,0 +1,1 @@
+enum SwitchSignInSignUpEvent { signIn, signUp }

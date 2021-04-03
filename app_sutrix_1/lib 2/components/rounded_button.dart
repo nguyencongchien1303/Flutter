@@ -24,14 +24,13 @@ class RoundedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
         // ignore: deprecated_member_use
         child: FlatButton(
-          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-          color: color,
-          onPressed: press,
-          child: Text(
-            text,
-            style: TextStyle(color: textColor),
-          ),
-        ),
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+            color: color,
+            onPressed: press,
+            child: Text(
+              text,
+              style: TextStyle(color: textColor),
+            )),
       ),
     );
   }

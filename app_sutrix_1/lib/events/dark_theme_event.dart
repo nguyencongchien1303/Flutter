@@ -1,0 +1,1 @@
+enum DarkThemeEvent { lightTheme, darkTheme }

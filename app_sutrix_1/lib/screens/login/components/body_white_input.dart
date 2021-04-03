@@ -1,16 +1,11 @@
 import 'package:app_sutrix_1/blocs/dark_theme_bloc.dart';
 import 'package:app_sutrix_1/blocs/switch_signin_signup_bloc.dart';
-import 'package:app_sutrix_1/screens/account/home_screen.dart';
-import 'package:app_sutrix_1/components/rounded_button.dart';
 import 'package:app_sutrix_1/screens/login/sign_in/sign_in_form.dart';
 import 'package:app_sutrix_1/screens/login/sign_up/sign_up_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'body_box_white.dart';
-import '../sign_in/components/input_password.dart';
-import '../sign_in/components/input_phone_number.dart';
 import 'note_bottom.dart';
-import '../sign_in/components/remember_and_forgot.dart';
 import 'header_sign_in_and_sign_out.dart';
 
 class BodyWhiteInput extends StatelessWidget {

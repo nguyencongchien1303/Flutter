@@ -45,7 +45,6 @@ class _RoundedPasswordFieldState extends State<RoundedPasswordField> {
           padding: const EdgeInsets.only(left: kDefaultPaddin * 3),
           child: IconButton(
             onPressed: () {
-              print("dsadsa");
               setState(() {
                 isShowPass = !isShowPass;
               });

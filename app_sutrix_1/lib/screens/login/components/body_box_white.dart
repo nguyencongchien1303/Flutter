@@ -13,7 +13,7 @@ class BodyBoxWhite extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return AnimatedContainer(
-      duration: Duration(milliseconds: 300),
+      duration: Duration(milliseconds: 500),
       curve: Curves.bounceInOut,
       height: switchInUp ? size.height * 0.52 : size.height * 0.7,
       decoration: BoxDecoration(

@@ -19,6 +19,7 @@ class FormSignIn extends StatelessWidget {
         TextEditingController();
     final TextEditingController _passController = TextEditingController();
     return AnimatedContainer(
+      curve: Curves.bounceInOut,
       duration: Duration(seconds: 3),
       child: Column(
         children: [

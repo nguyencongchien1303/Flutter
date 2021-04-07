@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = UserRepository();
-    user.createUserWithEmailAndPassword("chien@email.com", "dsadsad");
+    user.createUserWithEmailAndPassword("chien133@email.com", "dsadsad");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

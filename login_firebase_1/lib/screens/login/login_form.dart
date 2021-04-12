@@ -46,7 +46,7 @@ class _LoginFormState extends State<LoginForm> {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state.isFailure) {
-          Scaffold.of(context)
+          ScaffoldMessenger.of(context)
             ..removeCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
@@ -63,10 +63,8 @@ class _LoginFormState extends State<LoginForm> {
         }
 
         if (state.isSubmitting) {
-          Scaffold.of(context)
-            // ignore: deprecated_member_use
+          ScaffoldMessenger.of(context)
             ..removeCurrentSnackBar()
-            // ignore: deprecated_member_use
             ..showSnackBar(
               SnackBar(
                 content: Row(
@@ -104,6 +102,7 @@ class _LoginFormState extends State<LoginForm> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                     autocorrect: false,
+                    // autovalidate: true,
                     validator: (_) {
                       print("objectdsadsabdjsajdsjk");
                       return !state.isEmailValid ? 'Invalid Email' : null;

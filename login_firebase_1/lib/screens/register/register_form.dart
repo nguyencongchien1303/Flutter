@@ -97,7 +97,7 @@ class _LoginFormState extends State<RegisterForm> {
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
-                      print("objectdsadsabdjsajdsjkdlnsadksa");
+                      // print("objectdsadsabdjsajdsjkdlnsadksa");
                       return !state.isEmailValid ? 'Invalid Email' : null;
                     },
                   ),
@@ -111,6 +111,7 @@ class _LoginFormState extends State<RegisterForm> {
                     autovalidate: true,
                     autocorrect: false,
                     validator: (_) {
+                      // print("chiến");
                       return !state.isPasswordValid ? 'Invalid Password' : null;
                     },
                   ),

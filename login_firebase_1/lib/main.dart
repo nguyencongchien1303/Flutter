@@ -15,11 +15,11 @@ void main() async {
   await Firebase.initializeApp();
   Bloc.observer = SimpleBlocObserver();
   final UserRepository userRepository = UserRepository();
+  print(userRepository);
   runApp(
     BlocProvider(
-      create: (context) => AuthenticationBloc(
-        userRepository: userRepository,
-      )..add(AuthenticationStarted()),
+      create: (context) => AuthenticationBloc(userRepository: userRepository)
+        ..add(AuthenticationStarted()),
       child: MyApp(userRepository: userRepository),
     ),
   );
@@ -39,6 +39,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(
         builder: (context, state) {
+          print(state);
           if (state is AuthenticationFailure) {
             return LoginScreen(
               userRepository: _userRepository,

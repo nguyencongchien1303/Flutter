@@ -13,16 +13,16 @@ class Body extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(
-            text: "Recomended",
-            press: () {},
-          ),
+          // HeaderWithSearchBox(size: size),
+          // TitleWithMoreBtn(
+          //   text: "Recomended",
+          //   press: () {},
+          // ),
           RecomendsPlants(),
-          TitleWithMoreBtn(
-            text: "Recomended",
-            press: () {},
-          ),
+          // TitleWithMoreBtn(
+          //   text: "Recomended",
+          //   press: () {},
+          // ),
           RecomendsPlants(),
         ],
       ),

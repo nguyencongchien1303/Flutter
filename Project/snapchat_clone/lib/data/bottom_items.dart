@@ -10,7 +10,7 @@ List iconItems = [
   Icons.supervisor_account_outlined,
   Icons.menu
 ];
-List textItems = ["Map", "Chat", "Camera", "Stories", "Discover"];
+List textItems = ["Map", "Chat", "Camera", "People", "Discover"];
 List colorItems = [
   green,
   blue,

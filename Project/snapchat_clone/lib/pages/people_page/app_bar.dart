@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import '../../theme/colors.dart';
 
-class AppBarStories extends StatelessWidget implements PreferredSizeWidget {
+class AppBarPeople extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(60);
 
@@ -45,9 +45,14 @@ class AppBarStories extends StatelessWidget implements PreferredSizeWidget {
               ),
             ],
           ),
-          Text("Stories",
-              style: TextStyle(
-                  fontSize: 24, fontWeight: FontWeight.bold, color: black)),
+          Text(
+            "Stories",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: black,
+            ),
+          ),
           Row(
             children: [
               Container(

@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:snapchat_clone/controller/root_app_controller.dart';
 import 'package:snapchat_clone/data/bottom_items.dart';
-import 'package:snapchat_clone/pages/stories_page/stories_page_screen.dart';
 import 'package:snapchat_clone/theme/colors.dart';
+
+import 'people_page/people_page_screen.dart';
 
 class RootApp extends StatelessWidget {
   final controllerRootApp = Get.put(ControllerSelectedBottomSheet());
@@ -16,11 +15,12 @@ class RootApp extends StatelessWidget {
       body: IndexedStack(
         index: pageIndex,
         children: [
-          StoriesPageScreen(),
-          StoriesPageScreen(),
-          StoriesPageScreen(),
-          StoriesPageScreen(),
-          StoriesPageScreen(),
+          // StoryPageDetailScreen()
+          PeoplePageScreen(),
+          PeoplePageScreen(),
+          PeoplePageScreen(),
+          PeoplePageScreen(),
+          PeoplePageScreen(),
         ],
       ),
       bottomSheet: Container(

@@ -1,9 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:snapchat_clone/data/stories_page/stories_data.dart';
+import 'package:snapchat_clone/models/user_story_model.dart';
 import 'story_page_detail/story_page_detail.dart';
 
 class StoriesPageScreen extends StatelessWidget {
+  final List<StoriesDataModel> stories;
+
+  const StoriesPageScreen({Key key, this.stories}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -23,7 +27,7 @@ class StoriesPageScreen extends StatelessWidget {
                   return GestureDetector(
                     onTap: () {
                       Navigator.of(context)
-                          .push(_createRoute(stories_data[index]['videoUrl']));
+                          .push(_createRoute(stories[index].videoUrl));
                       //   PageTransition(
                       //     child: StoryPageDetailScreen(
                       //         videoUrl: stories_data[index]['videoUrl']),
@@ -43,7 +47,7 @@ class StoriesPageScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
-                                image: NetworkImage(stories_data[index]['img']),
+                                image: NetworkImage(stories[index].img),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -78,8 +82,7 @@ class StoriesPageScreen extends StatelessWidget {
                                             child: CircleAvatar(
                                               radius: 15,
                                               backgroundImage: NetworkImage(
-                                                  stories_data[index]
-                                                      ['avatar']),
+                                                  stories[index].avatar),
                                             ),
                                           ),
                                           decoration: new BoxDecoration(
@@ -113,7 +116,7 @@ class StoriesPageScreen extends StatelessWidget {
                                       ],
                                     ),
                                     Text(
-                                      stories_data[index]['name'],
+                                      stories[index].name,
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 16,

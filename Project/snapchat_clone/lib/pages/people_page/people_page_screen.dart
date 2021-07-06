@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat_clone/data/stories_page/stories_data.dart';
 import 'package:snapchat_clone/pages/people_page/active_page/active_page.dart';
 import 'package:snapchat_clone/pages/people_page/stories_page/stories_page.dart';
 import 'package:snapchat_clone/theme/colors.dart';
@@ -70,7 +71,7 @@ class PeoplePageScreen extends StatelessWidget {
             child: TabBarView(
               children: [
                 ActivePageScreen(),
-                StoriesPageScreen(),
+                StoriesPageScreen(stories: stories_data),
               ],
             ),
           ),

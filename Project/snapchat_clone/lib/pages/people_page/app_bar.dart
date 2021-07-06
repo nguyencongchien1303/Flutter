@@ -46,7 +46,7 @@ class AppBarPeople extends StatelessWidget implements PreferredSizeWidget {
             ],
           ),
           Text(
-            "Stories",
+            "People",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,

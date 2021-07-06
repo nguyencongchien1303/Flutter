@@ -1,55 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:snapchat_clone/theme/colors.dart';
 
-class StoryPageDetailScreen extends StatelessWidget {
+class StoryPageDetailScreen extends StatefulWidget {
+  final String videoUrl;
+
+  const StoryPageDetailScreen({Key key, this.videoUrl}) : super(key: key);
+
+  @override
+  _StoryPageDetailScreenState createState() => _StoryPageDetailScreenState();
+}
+
+class _StoryPageDetailScreenState extends State<StoryPageDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(30),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: AppBar(
-                backgroundColor: Colors.white,
-                elevation: 0,
-                bottom: PreferredSize(
-                  preferredSize: Size.fromHeight(20),
-                  child: Container(
-                    height: 30,
-                    child: TabBar(
-                      unselectedLabelColor: Colors.grey,
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      indicator: BoxDecoration(
-                        gradient:
-                            LinearGradient(colors: [Colors.grey, Colors.grey]),
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.redAccent,
-                      ),
-                      tabs: [
-                        Tab(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text("active".toUpperCase()),
-                          ),
-                        ),
-                        Tab(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Text("stories".toLowerCase()),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )),
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            Icon(Icons.apps),
-            Icon(Icons.movie),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: black,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.close),
+          onPressed: () {
+            Get.back();
+          },
         ),
       ),
     );

@@ -39,7 +39,7 @@ class PeoplePageScreen extends StatelessWidget {
                             child: Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "active (0)".toUpperCase(),
+                                "active (${stories_data.length})".toUpperCase(),
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,

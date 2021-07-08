@@ -4,24 +4,27 @@ import 'package:snapchat_clone/controller/root_app_controller.dart';
 import 'package:snapchat_clone/data/bottom_items.dart';
 import 'package:snapchat_clone/theme/colors.dart';
 
+import 'chats_page/chats_page_screen.dart';
 import 'people_page/people_page_screen.dart';
 
 class RootApp extends StatelessWidget {
   final controllerRootApp = Get.put(ControllerSelectedBottomSheet());
-  int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: pageIndex,
-        children: [
-          // StoryPageDetailScreen()
-          PeoplePageScreen(),
-          PeoplePageScreen(),
-          PeoplePageScreen(),
-          PeoplePageScreen(),
-          PeoplePageScreen(),
-        ],
+      body: GetBuilder<ControllerSelectedBottomSheet>(
+        builder: (controller) {
+          return IndexedStack(
+            index: controller.selected.value,
+            children: [
+              PeoplePageScreen(),
+              ChatsPageScreen(),
+              PeoplePageScreen(),
+              PeoplePageScreen(),
+              PeoplePageScreen(),
+            ],
+          );
+        },
       ),
       bottomSheet: Container(
         width: double.infinity,
@@ -47,7 +50,7 @@ class RootApp extends StatelessWidget {
                             children: [
                               Icon(
                                 iconItems[index],
-                                color: controllerRootApp.selected == index
+                                color: controllerRootApp.selected.value == index
                                     ? colorItems[index]
                                     : white.withOpacity(0.5),
                               ),
@@ -57,9 +60,10 @@ class RootApp extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w500,
-                                  color: controllerRootApp.selected == index
-                                      ? colorItems[index]
-                                      : white.withOpacity(0.5),
+                                  color:
+                                      controllerRootApp.selected.value == index
+                                          ? colorItems[index]
+                                          : white.withOpacity(0.5),
                                 ),
                               )
                             ],

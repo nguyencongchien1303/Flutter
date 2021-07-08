@@ -47,7 +47,8 @@ class StoriesPageScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
-                                image: NetworkImage(stories[index].img),
+                                image: NetworkImage(
+                                    stories[index].detail[0].imageUrl),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -101,7 +102,10 @@ class StoriesPageScreen extends StatelessWidget {
                                             height: 20.0,
                                             child: Center(
                                                 child: Text(
-                                              '1',
+                                              stories_data[index]
+                                                  .detail
+                                                  .length
+                                                  .toString(),
                                               style: TextStyle(
                                                   color: Colors.white),
                                             )),

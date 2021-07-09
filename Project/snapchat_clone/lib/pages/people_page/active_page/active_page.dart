@@ -38,12 +38,13 @@ class ActivePageScreen extends StatelessWidget {
                                 color: Color(0xFF66BB6A),
                                 shape: BoxShape.circle,
                                 border: Border.all(
-                                  color: Color(0xFFFFFFFF),
+                                  color:
+                                      Theme.of(context).scaffoldBackgroundColor,
                                   width: 3,
                                 ),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -52,8 +53,8 @@ class ActivePageScreen extends StatelessWidget {
                       child: Text(
                         stories_data[index].name,
                         style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.black,
+                          fontSize: 20,
+                          color: Theme.of(context).textTheme.headline1.color,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

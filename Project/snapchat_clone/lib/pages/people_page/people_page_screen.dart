@@ -11,7 +11,7 @@ class PeoplePageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: black,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBarPeople(),
       body: DefaultTabController(
         length: 2,
@@ -21,7 +21,7 @@ class PeoplePageScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AppBar(
-                  backgroundColor: Colors.white,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                   elevation: 0,
                   bottom: PreferredSize(
                     preferredSize: Size.fromHeight(20),

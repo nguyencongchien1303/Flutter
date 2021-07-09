@@ -9,6 +9,7 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
           padding: EdgeInsets.only(left: 20, right: 20, top: 15),
@@ -28,7 +29,11 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   Text(
                     "Chats",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).textTheme.headline1.color,
+                    ),
                   ),
                   Icon(Icons.edit)
                 ],
@@ -38,18 +43,20 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
                 width: double.infinity,
                 height: 40,
                 decoration: BoxDecoration(
-                    color: Color(0xFFe9eaec),
+                    color: Theme.of(context).backgroundColor,
                     borderRadius: BorderRadius.circular(15)),
                 child: TextField(
                   cursorColor: Color(0xFF000000),
                   controller: _searchController,
                   decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                        color: Color(0xFF000000).withOpacity(0.5),
-                      ),
-                      hintText: "Search",
-                      border: InputBorder.none),
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Color(0xFF8E8E93),
+                    ),
+                    hintText: "Search",
+                    hintStyle: TextStyle(color: Color(0xFF8E8E93)),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
             ],

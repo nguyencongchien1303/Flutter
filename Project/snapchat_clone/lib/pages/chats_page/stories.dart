@@ -19,7 +19,9 @@ class Stories extends StatelessWidget {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Color(0xFFe9eaec)),
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).backgroundColor,
+                    ),
                     child: Center(
                       child: Icon(
                         Icons.add,

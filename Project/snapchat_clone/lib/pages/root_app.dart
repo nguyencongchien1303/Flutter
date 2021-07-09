@@ -5,6 +5,7 @@ import 'package:snapchat_clone/data/bottom_items.dart';
 import 'package:snapchat_clone/theme/colors.dart';
 
 import 'chats_page/chats_page_screen.dart';
+import 'discover_page/change_theme.dart';
 import 'people_page/people_page_screen.dart';
 
 class RootApp extends StatelessWidget {
@@ -21,15 +22,16 @@ class RootApp extends StatelessWidget {
               ChatsPageScreen(),
               PeoplePageScreen(),
               PeoplePageScreen(),
-              PeoplePageScreen(),
+              DiscoverPageScreen(),
             ],
           );
         },
       ),
       bottomSheet: Container(
+        color: Theme.of(context).scaffoldBackgroundColor,
         width: double.infinity,
         height: 90,
-        decoration: BoxDecoration(color: Colors.black),
+        // decoration: BoxDecoration(color: Colors.black),
         child: Padding(
           padding:
               const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 10),
@@ -52,7 +54,7 @@ class RootApp extends StatelessWidget {
                                 iconItems[index],
                                 color: controllerRootApp.selected.value == index
                                     ? colorItems[index]
-                                    : white.withOpacity(0.5),
+                                    : Colors.grey,
                               ),
                               SizedBox(height: 5),
                               Text(
@@ -63,7 +65,7 @@ class RootApp extends StatelessWidget {
                                   color:
                                       controllerRootApp.selected.value == index
                                           ? colorItems[index]
-                                          : white.withOpacity(0.5),
+                                          : Colors.grey,
                                 ),
                               )
                             ],

@@ -10,7 +10,7 @@ class AppBarPeople extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      backgroundColor: white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

@@ -8,7 +8,7 @@ class ChatsPageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.red,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBarChats(),
       body: Stories(),
     );

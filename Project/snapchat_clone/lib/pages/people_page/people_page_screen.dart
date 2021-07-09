@@ -67,7 +67,7 @@ class PeoplePageScreen extends StatelessWidget {
           ),
           body: Container(
             padding: EdgeInsets.only(top: 20),
-            height: size.height - 220,
+            height: size.height - 170,
             child: TabBarView(
               children: [
                 ActivePageScreen(),

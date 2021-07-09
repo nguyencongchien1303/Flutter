@@ -12,7 +12,7 @@ class ChatsPageScreen extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBarChats(),
       body: Container(
-        height: size.height - 200,
+        height: size.height - 170,
         child: SingleChildScrollView(
           child: Column(
             children: [

@@ -28,10 +28,10 @@ class RootApp extends StatelessWidget {
         },
       ),
       bottomSheet: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        // color: Theme.of(context).scaffoldBackgroundColor,
+        color: Colors.red,
         width: double.infinity,
         height: 90,
-        // decoration: BoxDecoration(color: Colors.black),
         child: Padding(
           padding:
               const EdgeInsets.only(left: 20, right: 20, bottom: 20, top: 10),

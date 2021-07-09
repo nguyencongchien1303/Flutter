@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:snapchat_clone/theme/theme_service.dart';
 
 class DiscoverPageScreen extends StatelessWidget {
   @override
@@ -9,8 +10,7 @@ class DiscoverPageScreen extends StatelessWidget {
       body: Center(
         child: MaterialButton(
             onPressed: () {
-              Get.changeThemeMode(
-                  Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
+              ThemeService().changeThemeMode();
             },
             child: Text('switch theme')),
       ),

@@ -3,7 +3,7 @@ import 'package:snapchat_clone/models/user_story_model.dart';
 final List<StoriesDataModel> stories_data = [
   StoriesDataModel(
     "https://randomuser.me/api/portraits/men/31.jpg",
-    "Minaya Cruz",
+    "Chien",
     "Thu",
     "assets/video_1.mp4",
     false,

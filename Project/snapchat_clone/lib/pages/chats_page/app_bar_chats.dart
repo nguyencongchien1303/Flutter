@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:snapchat_clone/data/stories_page/stories_data.dart';
 
 class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
-  TextEditingController _searchController = new TextEditingController();
-
   @override
-  Size get preferredSize => const Size.fromHeight(110);
+  Size get preferredSize => const Size.fromHeight(60);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,27 +35,6 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   Icon(Icons.edit)
                 ],
-              ),
-              SizedBox(height: 10),
-              Container(
-                width: double.infinity,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: Theme.of(context).backgroundColor,
-                    borderRadius: BorderRadius.circular(15)),
-                child: TextField(
-                  cursorColor: Color(0xFF000000),
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Color(0xFF8E8E93),
-                    ),
-                    hintText: "Search",
-                    hintStyle: TextStyle(color: Color(0xFF8E8E93)),
-                    border: InputBorder.none,
-                  ),
-                ),
               ),
             ],
           ),

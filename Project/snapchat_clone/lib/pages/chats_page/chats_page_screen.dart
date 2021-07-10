@@ -11,8 +11,8 @@ class ChatsPageScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBarChats(),
-      body: Container(
-        height: size.height - 170,
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 70),
         child: SingleChildScrollView(
           child: Column(
             children: [

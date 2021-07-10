@@ -19,6 +19,8 @@ class Stories extends StatelessWidget {
                   color: Theme.of(context).backgroundColor,
                   borderRadius: BorderRadius.circular(15)),
               child: TextField(
+                style: TextStyle(
+                    color: Theme.of(context).textTheme.headline1.color),
                 cursorColor: Color(0xFF000000),
                 controller: _searchController,
                 decoration: InputDecoration(
@@ -131,10 +133,11 @@ class Stories extends StatelessWidget {
                                             width: 20,
                                             height: 20,
                                             decoration: BoxDecoration(
-                                                color: Color(0xFF66BB6A),
+                                                color: Color(0xFF5AD439),
                                                 shape: BoxShape.circle,
                                                 border: Border.all(
-                                                    color: Color(0xFFFFFFFF),
+                                                    color: Theme.of(context)
+                                                        .scaffoldBackgroundColor,
                                                     width: 3)),
                                           ),
                                         )

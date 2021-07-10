@@ -11,80 +11,13 @@ class AppBarPeople extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: black.withOpacity(0.1),
-                ),
-                child: Icon(
-                  Entypo.user,
-                  color: green,
-                  size: 28,
-                ),
-              ),
-              SizedBox(width: 5),
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: black.withOpacity(0.1),
-                ),
-                child: Icon(
-                  Icons.search_outlined,
-                  color: darkGrey,
-                  size: 28,
-                ),
-              ),
-            ],
-          ),
-          Text(
-            "People",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: black,
-            ),
-          ),
-          Row(
-            children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: black.withOpacity(0.1),
-                ),
-                child: Icon(
-                  Icons.person_add_outlined,
-                  color: darkGrey,
-                  size: 28,
-                ),
-              ),
-              SizedBox(width: 5),
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: black.withOpacity(0.1),
-                ),
-                child: Icon(
-                  Icons.more_horiz,
-                  color: darkGrey,
-                  size: 28,
-                ),
-              ),
-            ],
-          )
-        ],
+      title: Text(
+        "People",
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Theme.of(context).textTheme.headline1.color,
+        ),
       ),
     );
   }

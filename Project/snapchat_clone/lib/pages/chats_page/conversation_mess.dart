@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:snapchat_clone/data/conversation.dart';
 
 class ConversationMess extends StatelessWidget {
@@ -119,7 +120,8 @@ class ConversationMess extends StatelessWidget {
                               bottom: 0,
                               child: IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Icons.camera_alt)),
+                                  icon: SvgPicture.asset(
+                                      'assets/icons/camera.svg')),
                             )
                           ],
                         ),

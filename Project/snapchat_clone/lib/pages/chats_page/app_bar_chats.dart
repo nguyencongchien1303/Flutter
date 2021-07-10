@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:snapchat_clone/data/stories_page/stories_data.dart';
 
 class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
@@ -33,7 +34,17 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
                       color: Theme.of(context).textTheme.headline1.color,
                     ),
                   ),
-                  Icon(Icons.edit)
+                  Container(
+                    height: 42,
+                    width: 42,
+                    // decoration: BoxDecoration(
+                    //   shape: BoxShape.circle,
+                    //   color: Theme.of(context).backgroundColor,
+                    // ),
+                    child: Center(
+                        child:
+                            SvgPicture.asset('assets/icons/new_messages.svg')),
+                  )
                 ],
               ),
             ],

@@ -30,12 +30,12 @@ class StoriesPageScreen extends StatelessWidget {
                     },
                     child: Container(
                       width: (size.width - 30) / 2,
-                      height: 250,
+                      height: 300,
                       child: Stack(
                         children: [
                           Container(
                             width: (size.width - 30) / 2,
-                            height: 250,
+                            height: 300,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               image: DecorationImage(
@@ -47,7 +47,7 @@ class StoriesPageScreen extends StatelessWidget {
                           ),
                           Container(
                             width: (size.width - 15) / 2,
-                            height: 250,
+                            height: 300,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               gradient: LinearGradient(

@@ -7,7 +7,6 @@ import 'package:snapchat_clone/theme/colors.dart';
 
 import 'canmera_page/camera_page.dart';
 import 'chats_page/chats_page_screen.dart';
-import 'discover_page/change_theme.dart';
 import 'people_page/people_page_screen.dart';
 
 class RootApp extends StatelessWidget {
@@ -24,7 +23,6 @@ class RootApp extends StatelessWidget {
               ChatsPageScreen(),
               CameraPageScreen(),
               PeoplePageScreen(),
-              DiscoverPageScreen(),
             ],
           );
         },
@@ -46,15 +44,12 @@ class RootApp extends StatelessWidget {
                       onTap: () {
                         controllerRootApp.selectedBottomSheet(index);
                       },
-                      child: Stack(
+                      child: Column(
                         children: [
                           Container(
-                            // color: Colors.red,
-                            height: 100,
                             width: 60,
                             child: Column(
                               children: [
-                                SizedBox(height: 10),
                                 SizedBox(
                                   height: 27,
                                   width: 27,
@@ -78,31 +73,15 @@ class RootApp extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Positioned(
-                            top: 0,
-                            right: 5,
-                            child: Container(
-                              width: 23,
-                              height: 23,
-                              decoration: BoxDecoration(
-                                color: Color(0xFFFE294D),
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color:
-                                      Theme.of(context).scaffoldBackgroundColor,
-                                  width: 3,
-                                ),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                "7",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold),
-                              )),
+                          SizedBox(height: 7),
+                          Container(
+                            width: 5,
+                            height: 5,
+                            decoration: BoxDecoration(
+                              color: Color(0xFFFE294D),
+                              shape: BoxShape.circle,
                             ),
-                          )
+                          ),
                         ],
                       ),
                     );

@@ -5,7 +5,6 @@ class Stories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController _searchController = new TextEditingController();
-
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Column(
@@ -92,27 +91,31 @@ class Stories extends StatelessWidget {
                               child: Stack(
                                 children: <Widget>[
                                   stories_data[index].detail.length > 0
-                                      ? Container(
-                                          decoration: BoxDecoration(
+                                      ? UnicornOutlineButton(
+                                          strokeWidth: 2,
+                                          radius: 30,
+                                          gradient: LinearGradient(colors: [
+                                            Color(0xFFfeda75),
+                                            Color(0xFFfa7e1e),
+                                            Color(0xFFd62976),
+                                            Color(0xFF962fbf),
+                                            Color(0xFF4f5bd5),
+                                          ]),
+                                          child: Container(
+                                            width: 52,
+                                            height: 52,
+                                            decoration: BoxDecoration(
                                               shape: BoxShape.circle,
-                                              border: Border.all(
-                                                  color: Colors.blueAccent,
-                                                  width: 3)),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(3.0),
-                                            child: Container(
-                                              width: 75,
-                                              height: 75,
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  image: DecorationImage(
-                                                      image: NetworkImage(
-                                                          stories_data[index]
-                                                              .detail[0]
-                                                              .imageUrl),
-                                                      fit: BoxFit.cover)),
+                                              image: DecorationImage(
+                                                image: NetworkImage(
+                                                    stories_data[index]
+                                                        .detail[0]
+                                                        .imageUrl),
+                                                fit: BoxFit.cover,
+                                              ),
                                             ),
                                           ),
+                                          onPressed: () {},
                                         )
                                       : Container(
                                           width: 70,
@@ -176,4 +179,85 @@ class Stories extends StatelessWidget {
       ),
     );
   }
+}
+
+class UnicornOutlineButton extends StatelessWidget {
+  final _GradientPainter _painter;
+  final Widget _child;
+  final VoidCallback _callback;
+  final double _radius;
+
+  UnicornOutlineButton({
+    @required double strokeWidth,
+    @required double radius,
+    @required Gradient gradient,
+    @required Widget child,
+    @required VoidCallback onPressed,
+  })  : this._painter = _GradientPainter(
+            strokeWidth: strokeWidth, radius: radius, gradient: gradient),
+        this._child = child,
+        this._callback = onPressed,
+        this._radius = radius;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _painter,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: _callback,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(_radius),
+          onTap: _callback,
+          child: Container(
+            constraints: BoxConstraints(minWidth: 80, minHeight: 80),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                _child,
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _GradientPainter extends CustomPainter {
+  final Paint _paint = Paint();
+  final double radius;
+  final double strokeWidth;
+  final Gradient gradient;
+
+  _GradientPainter(
+      {@required double strokeWidth,
+      @required double radius,
+      @required Gradient gradient})
+      : this.strokeWidth = strokeWidth,
+        this.radius = radius,
+        this.gradient = gradient;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Rect outerRect = Offset.zero & size;
+    var outerRRect =
+        RRect.fromRectAndRadius(outerRect, Radius.circular(radius));
+
+    Rect innerRect = Rect.fromLTWH(strokeWidth, strokeWidth,
+        size.width - strokeWidth * 2, size.height - strokeWidth * 2);
+    var innerRRect = RRect.fromRectAndRadius(
+        innerRect, Radius.circular(radius - strokeWidth));
+
+    _paint.shader = gradient.createShader(outerRect);
+
+    Path path1 = Path()..addRRect(outerRRect);
+    Path path2 = Path()..addRRect(innerRRect);
+    var path = Path.combine(PathOperation.difference, path1, path2);
+    canvas.drawPath(path, _paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => oldDelegate != this;
 }

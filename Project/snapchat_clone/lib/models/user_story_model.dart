@@ -1,7 +1,3 @@
-import 'dart:ffi';
-
-import 'package:flutter/material.dart';
-
 class StoryDetailModel {
   final String imageUrl;
   final Duration duration;

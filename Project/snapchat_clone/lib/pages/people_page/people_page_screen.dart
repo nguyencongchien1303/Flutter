@@ -54,7 +54,8 @@ class PeoplePageScreen extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  "stories (100)".toUpperCase(),
+                                  "stories (${stories_data.length})"
+                                      .toUpperCase(),
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,

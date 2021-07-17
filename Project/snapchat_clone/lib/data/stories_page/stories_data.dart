@@ -170,5 +170,73 @@ final List<StoriesDataModel> stories_data = [
         Duration(seconds: 10),
       ),
     ],
-  )
+  ),
+  StoriesDataModel(
+    "https://randomuser.me/api/portraits/men/44.jpg",
+    "Zohre Nemati",
+    "Wed",
+    "assets/video_1.mp4",
+    true,
+    [
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+    ],
+  ),
+  StoriesDataModel(
+    "https://randomuser.me/api/portraits/men/44.jpg",
+    "Zohre Nemati",
+    "Wed",
+    "assets/video_1.mp4",
+    true,
+    [
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+    ],
+  ),
+  StoriesDataModel(
+    "https://randomuser.me/api/portraits/men/44.jpg",
+    "Zohre Nemati",
+    "Wed",
+    "assets/video_1.mp4",
+    true,
+    [
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+    ],
+  ),
+  StoriesDataModel(
+    "https://randomuser.me/api/portraits/men/44.jpg",
+    "Zohre Nemati",
+    "Wed",
+    "assets/video_1.mp4",
+    true,
+    [
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+      StoryDetailModel(
+        "https://images.unsplash.com/photo-1610990275491-54fc65bb732f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Mnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+        Duration(seconds: 10),
+      ),
+    ],
+  ),
 ];

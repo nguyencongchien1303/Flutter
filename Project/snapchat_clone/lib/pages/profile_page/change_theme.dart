@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:snapchat_clone/sign_in_up/sign_in/sign_in_screen.dart';
 import 'package:snapchat_clone/theme/theme_service.dart';
 
 class ProfilePageScreen extends StatelessWidget {
@@ -17,11 +18,22 @@ class ProfilePageScreen extends StatelessWidget {
       ),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Center(
-        child: MaterialButton(
-            onPressed: () {
-              ThemeService().changeThemeMode();
-            },
-            child: Text('switch theme')),
+        child: Column(
+          children: [
+            MaterialButton(
+              onPressed: () {
+                ThemeService().changeThemeMode();
+              },
+              child: Text('switch theme'),
+            ),
+            MaterialButton(
+              onPressed: () {
+                Get.to(SignInScreen());
+              },
+              child: Text('Log out'),
+            ),
+          ],
+        ),
       ),
     );
   }

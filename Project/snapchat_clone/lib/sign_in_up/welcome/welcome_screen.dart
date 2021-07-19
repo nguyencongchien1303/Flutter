@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:snapchat_clone/Animations/FadeAnimation.dart';
-import 'package:snapchat_clone/sign_in_up/sign_in/sign_in_screen.dart';
+import 'package:snapchat_clone/sign_in_up/sign_in_up/sign_in_up_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override

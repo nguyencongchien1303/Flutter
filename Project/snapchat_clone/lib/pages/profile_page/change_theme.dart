@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:snapchat_clone/sign_in_up/sign_in/sign_in_screen.dart';
+import 'package:snapchat_clone/sign_in_up/sign_in_up/sign_in_up_screen.dart';
 import 'package:snapchat_clone/theme/theme_service.dart';
 
 class ProfilePageScreen extends StatelessWidget {

@@ -95,11 +95,9 @@ class Stories extends StatelessWidget {
                                           strokeWidth: 2,
                                           radius: 30,
                                           gradient: LinearGradient(colors: [
-                                            Color(0xFFfeda75),
-                                            Color(0xFFfa7e1e),
-                                            Color(0xFFd62976),
-                                            Color(0xFF962fbf),
-                                            Color(0xFF4f5bd5),
+                                            Color(0xFF7BD5F5),
+                                            Color(0xFF787FF6),
+                                            Color(0xFF4ADEDE),
                                           ]),
                                           child: Container(
                                             width: 52,

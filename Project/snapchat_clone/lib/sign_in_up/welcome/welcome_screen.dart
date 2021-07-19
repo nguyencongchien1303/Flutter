@@ -99,7 +99,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     image: DecorationImage(
                       image: AssetImage('assets/images/one.png'),
                       colorFilter:
-                          ColorFilter.mode(Color(0xFFfa7e1e), BlendMode.srcIn),
+                          ColorFilter.mode(Color(0xFF7BD5F5), BlendMode.srcIn),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -118,7 +118,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     image: DecorationImage(
                       image: AssetImage('assets/images/one.png'),
                       colorFilter:
-                          ColorFilter.mode(Color(0xFFfa7e1e), BlendMode.srcIn),
+                          ColorFilter.mode(Color(0xFF7BD5F5), BlendMode.srcIn),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -137,7 +137,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     image: DecorationImage(
                       image: AssetImage('assets/images/one.png'),
                       colorFilter:
-                          ColorFilter.mode(Color(0xFFfa7e1e), BlendMode.srcIn),
+                          ColorFilter.mode(Color(0xFF7BD5F5), BlendMode.srcIn),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -192,7 +192,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
-                                  color: Color(0xFFfa7e1e).withOpacity(0.4)),
+                                  color: Color(0xFF7BD5F5).withOpacity(0.5)),
                               child: InkWell(
                                 onTap: () {
                                   _scaleController.forward();
@@ -218,11 +218,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                                                       begin: Alignment.topRight,
                                                       end: Alignment.bottomLeft,
                                                       colors: [
-                                                        Color(0xFFfeda75),
-                                                        Color(0xFFfa7e1e),
-                                                        Color(0xFFd62976),
-                                                        Color(0xFF962fbf),
-                                                        Color(0xFF4f5bd5),
+                                                        Color(0xFF7BD5F5),
+                                                        Color(0xFF787FF6),
+                                                        Color(0xFF4ADEDE),
                                                       ],
                                                     ),
                                                   ),

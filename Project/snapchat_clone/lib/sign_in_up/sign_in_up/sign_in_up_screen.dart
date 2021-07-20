@@ -4,515 +4,139 @@ import 'package:get/get.dart';
 import 'package:snapchat_clone/Animations/FadeAnimation.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'package:snapchat_clone/controller/switch_in_up_controller.dart';
-import 'package:snapchat_clone/pages/chats_page/stories.dart';
-import 'package:snapchat_clone/pages/root_app.dart';
+import 'sign_up.dart';
+
+import 'sign_in.dart';
 
 class SignInScreen extends StatelessWidget {
   final controller_switch_in_up = Get.put(ControllerSwitchInUp());
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Container(
-        padding: EdgeInsets.all(30),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 10),
-            FadeAnimation(
-              1.0,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+              height: size.height * 0.4,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "English",
-                    style: TextStyle(
-                        color: Theme.of(context).textTheme.headline1.color),
+                  SizedBox(height: 10),
+                  FadeAnimation(
+                    1.0,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "English",
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.headline1.color),
+                        ),
+                      ],
+                    ),
+                  ),
+                  FadeAnimation(
+                    1.2,
+                    Center(
+                      child: GradientText(
+                        "Chats Pro",
+                        colors: [
+                          Color(0xFF7BD5F5),
+                          Color(0xFF787FF6),
+                          Color(0xFF4ADEDE),
+                        ],
+                        style: TextStyle(
+                          color: Theme.of(context).textTheme.headline1.color,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  FadeAnimation(
+                    1.4,
+                    Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        color: Color(0xFF4267B2),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Icon(
+                              FontAwesomeIcons.facebookSquare,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                          ),
+                          Text(
+                            "Continue with Facebook",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  FadeAnimation(
+                    1.6,
+                    Container(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: new Container(
+                                margin: const EdgeInsets.only(
+                                    left: 10.0, right: 15.0),
+                                child: Divider(
+                                  color: Colors.grey.withOpacity(.8),
+                                  height: 5,
+                                )),
+                          ),
+                          Text(
+                            "OR",
+                            style:
+                                TextStyle(color: Colors.grey.withOpacity(.8)),
+                          ),
+                          Expanded(
+                            child: new Container(
+                                margin: const EdgeInsets.only(
+                                    left: 15.0, right: 10.0),
+                                child: Divider(
+                                  color: Colors.grey.withOpacity(.8),
+                                  height: 10,
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 20),
-            FadeAnimation(
-              1.2,
-              Center(
-                child: GradientText(
-                  "Chats Pro",
-                  colors: [
-                    // Color(0xFFfeda75),
-                    // Color(0xFFfa7e1e),
-                    // Color(0xFFd62976),
-                    // Color(0xFF962fbf),
-                    // Color(0xFF4f5bd5),
-                    Color(0xFF7BD5F5),
-                    Color(0xFF787FF6),
-                    Color(0xFF4ADEDE),
-                  ],
-                  style: TextStyle(
-                    color: Theme.of(context).textTheme.headline1.color,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
+            Container(
+              height: size.height * 0.5,
+              child: FadeAnimation(
+                1.8,
+                GetBuilder<ControllerSwitchInUp>(
+                  builder: (value) {
+                    return (controller_switch_in_up.sign_up.value == false)
+                        ? SignInPage(
+                            controller_switch_in_up: controller_switch_in_up)
+                        : SignUpPage(
+                            controller_switch_in_up: controller_switch_in_up);
+                  },
                 ),
-              ),
-            ),
-            SizedBox(height: 30),
-            FadeAnimation(
-              1.4,
-              Container(
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(5)),
-                  color: Color(0xFF4267B2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Icon(
-                        FontAwesomeIcons.facebookSquare,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
-                    Text(
-                      "Continue with Facebook",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            FadeAnimation(
-              1.6,
-              Container(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: new Container(
-                          margin:
-                              const EdgeInsets.only(left: 10.0, right: 15.0),
-                          child: Divider(
-                            color: Colors.grey.withOpacity(.8),
-                            height: 5,
-                          )),
-                    ),
-                    Text(
-                      "OR",
-                      style: TextStyle(color: Colors.grey.withOpacity(.8)),
-                    ),
-                    Expanded(
-                      child: new Container(
-                          margin:
-                              const EdgeInsets.only(left: 15.0, right: 10.0),
-                          child: Divider(
-                            color: Colors.grey.withOpacity(.8),
-                            height: 10,
-                          )),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            FadeAnimation(
-              1.8,
-              GetBuilder<ControllerSwitchInUp>(
-                builder: (value) {
-                  return (controller_switch_in_up.sign_up.value == false)
-                      ? FadeAnimation(
-                          1.0,
-                          Column(
-                            children: [
-                              FadeAnimation(
-                                1.0,
-                                Container(
-                                  padding: EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Theme.of(context)
-                                        .scaffoldBackgroundColor,
-                                  ),
-                                  child: Column(
-                                    children: [
-                                      FadeAnimation(
-                                        1.0,
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                  color: Colors.grey[300]),
-                                            ),
-                                          ),
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              hintStyle: TextStyle(
-                                                  color: Colors.grey
-                                                      .withOpacity(.8)),
-                                              hintText: "Email or Phone number",
-                                            ),
-                                            style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .textTheme
-                                                  .headline1
-                                                  .color,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      FadeAnimation(
-                                        1.2,
-                                        Container(
-                                          decoration: BoxDecoration(),
-                                          child: TextField(
-                                            decoration: InputDecoration(
-                                              border: InputBorder.none,
-                                              hintStyle: TextStyle(
-                                                  color: Colors.grey
-                                                      .withOpacity(.8)),
-                                              hintText: "Password",
-                                            ),
-                                            style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .textTheme
-                                                  .headline1
-                                                  .color,
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              FadeAnimation(
-                                1.2,
-                                FadeAnimation(
-                                  1.0,
-                                  Center(
-                                    child: Container(
-                                      height: 50,
-                                      width: 200,
-                                      child: UnicornOutlineButton(
-                                        strokeWidth: 2,
-                                        radius: 30,
-                                        gradient: LinearGradient(
-                                          colors: [
-                                            Color(0xFF7BD5F5),
-                                            Color(0xFF787FF6),
-                                            Color(0xFF4ADEDE),
-                                          ],
-                                        ),
-                                        child: Center(
-                                          child: GradientText(
-                                            "Login",
-                                            colors: [
-                                              Color(0xFF7BD5F5),
-                                              Color(0xFF787FF6),
-                                              Color(0xFF4ADEDE),
-                                            ],
-                                            style: TextStyle(
-                                              color: Theme.of(context)
-                                                  .textTheme
-                                                  .headline1
-                                                  .color,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          Get.to(RootApp());
-                                        },
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 10),
-                              FadeAnimation(
-                                1.4,
-                                FadeAnimation(
-                                  1.0,
-                                  Center(
-                                    child: Text(
-                                      "Forgot password?",
-                                      style: TextStyle(
-                                          color: Theme.of(context)
-                                              .textTheme
-                                              .headline1
-                                              .color),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 100),
-                              FadeAnimation(
-                                1.6,
-                                FadeAnimation(
-                                  1.0,
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "Don't have an account?",
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .textTheme
-                                              .headline1
-                                              .color
-                                              .withOpacity(0.8),
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          controller_switch_in_up
-                                              .changeStatus(true);
-                                        },
-                                        child: Text(
-                                          " Sign up",
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      : Column(
-                          children: [
-                            FadeAnimation(
-                              1.0,
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  color:
-                                      Theme.of(context).scaffoldBackgroundColor,
-                                ),
-                                child: Column(
-                                  children: [
-                                    FadeAnimation(
-                                      1.0,
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                                color: Colors.grey[300]),
-                                          ),
-                                        ),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey
-                                                    .withOpacity(.8)),
-                                            hintText: "Name",
-                                          ),
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FadeAnimation(
-                                      1.2,
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                                color: Colors.grey[300]),
-                                          ),
-                                        ),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey
-                                                    .withOpacity(.8)),
-                                            hintText: "Email",
-                                          ),
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FadeAnimation(
-                                      1.4,
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                                color: Colors.grey[300]),
-                                          ),
-                                        ),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey
-                                                    .withOpacity(.8)),
-                                            hintText: "Phone",
-                                          ),
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FadeAnimation(
-                                      1.6,
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          border: Border(
-                                            bottom: BorderSide(
-                                                color: Colors.grey[300]),
-                                          ),
-                                        ),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey
-                                                    .withOpacity(.8)),
-                                            hintText: "Password",
-                                          ),
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    FadeAnimation(
-                                      1.8,
-                                      Container(
-                                        decoration: BoxDecoration(),
-                                        child: TextField(
-                                          decoration: InputDecoration(
-                                            border: InputBorder.none,
-                                            hintStyle: TextStyle(
-                                                color: Colors.grey
-                                                    .withOpacity(.8)),
-                                            hintText: "Confirm Password",
-                                          ),
-                                          style: TextStyle(
-                                            color: Theme.of(context)
-                                                .textTheme
-                                                .headline1
-                                                .color,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            FadeAnimation(
-                              1.2,
-                              Center(
-                                child: Container(
-                                  height: 50,
-                                  width: 200,
-                                  child: UnicornOutlineButton(
-                                    strokeWidth: 2,
-                                    radius: 30,
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Color(0xFF7BD5F5),
-                                        Color(0xFF787FF6),
-                                        Color(0xFF4ADEDE),
-                                      ],
-                                    ),
-                                    child: Center(
-                                      child: GradientText(
-                                        "Create Account",
-                                        colors: [
-                                          Color(0xFF7BD5F5),
-                                          Color(0xFF787FF6),
-                                          Color(0xFF4ADEDE),
-                                        ],
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .textTheme
-                                              .headline1
-                                              .color,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                    onPressed: () {
-                                      Get.to(RootApp());
-                                    },
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 100),
-                            FadeAnimation(
-                              1.8,
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Already have an account?",
-                                    style: TextStyle(
-                                      color: Theme.of(context)
-                                          .textTheme
-                                          .headline1
-                                          .color
-                                          .withOpacity(0.8),
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      controller_switch_in_up
-                                          .changeStatus(false);
-                                    },
-                                    child: Text(
-                                      " Login",
-                                      style: TextStyle(
-                                        color: Theme.of(context)
-                                            .textTheme
-                                            .headline1
-                                            .color,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        );
-                },
               ),
             ),
           ],

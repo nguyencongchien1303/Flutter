@@ -42,7 +42,7 @@ class SignUpPage extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Name",
+                        hintText: "Name".tr,
                       ),
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color,
@@ -63,7 +63,7 @@ class SignUpPage extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Email",
+                        hintText: "Email".tr,
                       ),
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color,
@@ -84,7 +84,7 @@ class SignUpPage extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Phone",
+                        hintText: "Phone".tr,
                       ),
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color,
@@ -105,7 +105,7 @@ class SignUpPage extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Password",
+                        hintText: "Password".tr,
                       ),
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color,
@@ -122,7 +122,7 @@ class SignUpPage extends StatelessWidget {
                         border: InputBorder.none,
                         hintStyle:
                             TextStyle(color: Colors.grey.withOpacity(.8)),
-                        hintText: "Confirm Password",
+                        hintText: "Confirm Password".tr,
                       ),
                       style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color,
@@ -152,7 +152,7 @@ class SignUpPage extends StatelessWidget {
                 ),
                 child: Center(
                   child: GradientText(
-                    "Create Account",
+                    "Create new account".tr,
                     colors: [
                       Color(0xFF7BD5F5),
                       Color(0xFF787FF6),
@@ -179,7 +179,7 @@ class SignUpPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Already have an account?",
+                "Already have an account?".tr,
                 style: TextStyle(
                   color: Theme.of(context)
                       .textTheme
@@ -193,7 +193,7 @@ class SignUpPage extends StatelessWidget {
                   controller_switch_in_up.changeStatus(false);
                 },
                 child: Text(
-                  " Login",
+                  " Login".tr,
                   style: TextStyle(
                     color: Theme.of(context).textTheme.headline1.color,
                     fontWeight: FontWeight.bold,

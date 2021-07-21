@@ -3,7 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:snapchat_clone/Animations/FadeAnimation.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:snapchat_clone/controller/change_language.dart';
 import 'package:snapchat_clone/controller/switch_in_up_controller.dart';
+import 'package:snapchat_clone/languages/localization_service.dart';
 import 'sign_up.dart';
 
 import 'sign_in.dart';
@@ -30,17 +32,7 @@ class SignInScreen extends StatelessWidget {
                   SizedBox(height: 10),
                   FadeAnimation(
                     1.0,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "English",
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.headline1.color),
-                        ),
-                      ],
-                    ),
+                    ChangeLanguage(),
                   ),
                   FadeAnimation(
                     1.2,
@@ -80,7 +72,7 @@ class SignInScreen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "Continue with Facebook",
+                            "Continue with Facebook".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           )
@@ -104,7 +96,7 @@ class SignInScreen extends StatelessWidget {
                                 )),
                           ),
                           Text(
-                            "OR",
+                            "OR".tr,
                             style:
                                 TextStyle(color: Colors.grey.withOpacity(.8)),
                           ),
@@ -143,5 +135,37 @@ class SignInScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class ChangeLanguage extends StatelessWidget {
+  final controllerChangeLanguage = Get.put(ControllerChangeLanguage());
+
+  @override
+  Widget build(BuildContext context) {
+    return GetX<ControllerChangeLanguage>(
+      builder: (value) {
+        return DropdownButton(
+          items: _buildDropdownMenuItems(),
+          icon: Icon(Icons.arrow_drop_down),
+          value: controllerChangeLanguage.valueLang.value,
+          onChanged: (String value) {
+            controllerChangeLanguage.changeLanguage(value);
+            LocalizationService.changeLocale(value);
+          },
+        );
+      },
+    );
+  }
+
+  List<DropdownMenuItem<String>> _buildDropdownMenuItems() {
+    List<DropdownMenuItem<String>> list = [];
+    LocalizationService.langs.forEach((key, value) {
+      list.add(DropdownMenuItem<String>(
+        value: key,
+        child: Text(value),
+      ));
+    });
+    return list;
   }
 }

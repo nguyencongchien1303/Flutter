@@ -44,7 +44,7 @@ class SignInPage extends StatelessWidget {
                             border: InputBorder.none,
                             hintStyle:
                                 TextStyle(color: Colors.grey.withOpacity(.8)),
-                            hintText: "Email or Phone number",
+                            hintText: "Email or Phone number".tr,
                           ),
                           style: TextStyle(
                             color: Theme.of(context).textTheme.headline1.color,
@@ -61,7 +61,7 @@ class SignInPage extends StatelessWidget {
                             border: InputBorder.none,
                             hintStyle:
                                 TextStyle(color: Colors.grey.withOpacity(.8)),
-                            hintText: "Password",
+                            hintText: "Password".tr,
                           ),
                           style: TextStyle(
                             color: Theme.of(context).textTheme.headline1.color,
@@ -93,7 +93,7 @@ class SignInPage extends StatelessWidget {
                       ),
                       child: Center(
                         child: GradientText(
-                          "Login",
+                          "Login".tr,
                           colors: [
                             Color(0xFF7BD5F5),
                             Color(0xFF787FF6),
@@ -121,7 +121,7 @@ class SignInPage extends StatelessWidget {
                 1.0,
                 Center(
                   child: Text(
-                    "Forgot password?",
+                    "Forgot password?".tr,
                     style: TextStyle(
                         color: Theme.of(context).textTheme.headline1.color),
                   ),
@@ -138,7 +138,7 @@ class SignInPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?",
+                  "Don't have an account?".tr,
                   style: TextStyle(
                     color: Theme.of(context)
                         .textTheme
@@ -152,7 +152,7 @@ class SignInPage extends StatelessWidget {
                     controller_switch_in_up.changeStatus(true);
                   },
                   child: Text(
-                    " Sign up",
+                    " Sign up".tr,
                     style: TextStyle(
                       color: Theme.of(context).textTheme.headline1.color,
                       fontWeight: FontWeight.bold,

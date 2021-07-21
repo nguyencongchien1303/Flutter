@@ -38,7 +38,7 @@ class Stories extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: <Widget>[
+              children: [
                 SizedBox(width: 10),
                 Padding(
                   padding: EdgeInsets.only(right: 15, left: 5),
@@ -89,7 +89,7 @@ class Stories extends StatelessWidget {
                               width: 60,
                               height: 60,
                               child: Stack(
-                                children: <Widget>[
+                                children: [
                                   stories_data[index].detail.length > 0
                                       ? UnicornOutlineButton(
                                           strokeWidth: 2,
@@ -212,7 +212,7 @@ class UnicornOutlineButton extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: [
                 _child,
               ],
             ),

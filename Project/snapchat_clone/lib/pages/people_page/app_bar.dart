@@ -18,7 +18,7 @@ class AppBarPeople extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(left: 20, right: 20, top: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               GestureDetector(
                 onTap: () {
                   Get.to(ProfilePageScreen());

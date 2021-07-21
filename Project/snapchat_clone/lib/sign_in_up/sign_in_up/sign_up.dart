@@ -172,7 +172,7 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 40),
+        SizedBox(height: MediaQuery.of(context).size.height * 0.017),
         FadeAnimation(
           2.0,
           Row(

@@ -143,13 +143,17 @@ class ChangeLanguage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (controllerChangeLanguage.getStorage.read("isLocale") != null) {
+      controllerChangeLanguage.valueLang.value =
+          controllerChangeLanguage.getStorage.read("isLocale");
+    }
     return GetX<ControllerChangeLanguage>(
       builder: (value) {
         return DropdownButton(
-          items: _buildDropdownMenuItems(),
+          items: _buildDropdownMenuItems(context),
           icon: Icon(Icons.arrow_drop_down),
           value: controllerChangeLanguage.valueLang.value,
-          onChanged: (String value) {
+          onChanged: (value) {
             controllerChangeLanguage.changeLanguage(value);
             LocalizationService.changeLocale(value);
           },
@@ -158,12 +162,15 @@ class ChangeLanguage extends StatelessWidget {
     );
   }
 
-  List<DropdownMenuItem<String>> _buildDropdownMenuItems() {
+  List<DropdownMenuItem<String>> _buildDropdownMenuItems(context) {
     List<DropdownMenuItem<String>> list = [];
     LocalizationService.langs.forEach((key, value) {
       list.add(DropdownMenuItem<String>(
         value: key,
-        child: Text(value),
+        child: Text(
+          value,
+          style: TextStyle(color: Theme.of(context).textTheme.headline1.color),
+        ),
       ));
     });
     return list;

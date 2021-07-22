@@ -149,14 +149,16 @@ class ChangeLanguage extends StatelessWidget {
     }
     return GetX<ControllerChangeLanguage>(
       builder: (value) {
-        return DropdownButton(
-          items: _buildDropdownMenuItems(context),
-          icon: Icon(Icons.arrow_drop_down),
-          value: controllerChangeLanguage.valueLang.value,
-          onChanged: (value) {
-            controllerChangeLanguage.changeLanguage(value);
-            LocalizationService.changeLocale(value);
-          },
+        return DropdownButtonHideUnderline(
+          child: DropdownButton(
+            items: _buildDropdownMenuItems(context),
+            icon: Icon(Icons.arrow_drop_down),
+            value: controllerChangeLanguage.valueLang.value,
+            onChanged: (value) {
+              controllerChangeLanguage.changeLanguage(value);
+              LocalizationService.changeLocale(value);
+            },
+          ),
         );
       },
     );

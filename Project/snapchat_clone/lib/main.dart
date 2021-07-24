@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
           : Locale('vi_VN'),
       fallbackLocale: LocalizationService.fallbackLocale,
       translations: LocalizationService(),
-      home: WelcomeScreen(),
+      // home: WelcomeScreen(),
+      home: RootApp(),
     );
   }
 }

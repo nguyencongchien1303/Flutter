@@ -41,7 +41,6 @@ class RootApp extends StatelessWidget {
           child: GetBuilder<ControllerSelectedBottomSheet>(
             builder: (value) {
               return Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -104,26 +103,64 @@ class RootApp extends StatelessWidget {
                       },
                       child: Column(
                         children: [
-                          Container(
-                            width: 30,
-                            height: 30,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                image: NetworkImage(stories_data[0].avatar),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 7),
-                          Container(
-                            width: 5,
-                            height: 5,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFFE294D),
-                              shape: BoxShape.circle,
-                            ),
-                          ),
+                          controllerRootApp.selected.value != 4
+                              ? Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Theme.of(context)
+                                          .scaffoldBackgroundColor,
+                                      width: 2,
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(0.3),
+                                    child: Container(
+                                      width: 28,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                  stories_data[0].avatar),
+                                              fit: BoxFit.cover)),
+                                    ),
+                                  ),
+                                )
+                              : Container(
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .headline1
+                                          .color,
+                                      width: 2,
+                                    ),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(0.3),
+                                    child: Container(
+                                      width: 28,
+                                      height: 28,
+                                      decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                  stories_data[0].avatar),
+                                              fit: BoxFit.cover)),
+                                    ),
+                                  ),
+                                ),
+                          // SizedBox(height: 7),
+                          // Container(
+                          //   width: 5,
+                          //   height: 5,
+                          //   decoration: BoxDecoration(
+                          //     color: Color(0xFFFE294D),
+                          //     shape: BoxShape.circle,
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),

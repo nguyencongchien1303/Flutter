@@ -24,7 +24,6 @@ class ConversationMess extends StatelessWidget {
                     child: Slidable(
                       actionPane: SlidableScrollActionPane(),
                       actionExtentRatio: 0.16,
-                      // closeOnScroll: false,
                       child: OnTapConversation(size: size, index: index),
                       secondaryActions: [
                         SlideAction(
@@ -76,7 +75,7 @@ class OnTapConversation extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.only(left: 10.0),
             child: Stack(
               children: [
                 Container(
@@ -90,27 +89,27 @@ class OnTapConversation extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: 0,
-                  right: 0,
-                  child: Container(
-                    width: 15,
-                    height: 15,
-                    decoration: BoxDecoration(
-                      color: Color(0xFF66BB6A),
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Theme.of(context).scaffoldBackgroundColor,
-                        width: 3,
-                      ),
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   bottom: 0,
+                //   right: 0,
+                //   child: Container(
+                //     width: 15,
+                //     height: 15,
+                //     decoration: BoxDecoration(
+                //       color: Color(0xFF66BB6A),
+                //       shape: BoxShape.circle,
+                //       border: Border.all(
+                //         color: Theme.of(context).scaffoldBackgroundColor,
+                //         width: 3,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
           Container(
-            width: size.width - 80,
+            width: size.width - 60,
             child: Stack(
               children: [
                 Padding(
@@ -130,7 +129,7 @@ class OnTapConversation extends StatelessWidget {
                         children: [
                           ConstrainedBox(
                             constraints:
-                                BoxConstraints(maxWidth: size.width - 230),
+                                BoxConstraints(maxWidth: size.width - 200),
                             child: Text(
                               conversationList[index].lastMessage,
                               style: TextStyle(

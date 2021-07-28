@@ -26,6 +26,7 @@ class RootApp extends StatelessWidget {
               ChatsPageScreen(),
               SearchPageScreen(),
               CameraPageScreen(),
+              // Navigator.push(context, MaterialPageRoute(builder: (_) => CameraPageScreen())),
               PeoplePageScreen(),
               ProfilePageScreen()
             ],

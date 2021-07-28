@@ -13,7 +13,7 @@ class AppBarChats extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+          padding: EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

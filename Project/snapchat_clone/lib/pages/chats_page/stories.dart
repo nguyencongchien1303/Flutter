@@ -10,7 +10,7 @@ class Stories extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Container(
               width: double.infinity,
               height: 40,
@@ -40,49 +40,46 @@ class Stories extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(width: 10),
-                Padding(
-                  padding: EdgeInsets.only(right: 15, left: 5),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 60,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Theme.of(context).backgroundColor,
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.add,
-                            size: 33,
-                          ),
+                Column(
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Theme.of(context).backgroundColor,
+                      ),
+                      child: Center(
+                        child: Icon(
+                          Icons.add,
+                          size: 33,
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: 75,
-                        child: Align(
-                          child: Text(
-                            'Your Story',
-                            style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.headline1.color,
-                            ),
-                            overflow: TextOverflow.ellipsis,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      width: 75,
+                      child: Align(
+                        child: Text(
+                          'Your Story',
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Theme.of(context).textTheme.headline1.color,
                           ),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
                 Row(
                   children: List.generate(
                     stories_data.length,
                     (index) {
                       return Padding(
-                        padding: const EdgeInsets.only(right: 15),
+                        padding: const EdgeInsets.only(right: 10),
                         child: Column(
                           children: [
                             Container(
@@ -126,23 +123,23 @@ class Stories extends StatelessWidget {
                                                           .avatar),
                                                   fit: BoxFit.cover)),
                                         ),
-                                  stories_data[index].isOnline
-                                      ? Positioned(
-                                          top: 38,
-                                          left: 42,
-                                          child: Container(
-                                            width: 20,
-                                            height: 20,
-                                            decoration: BoxDecoration(
-                                                color: Color(0xFF5AD439),
-                                                shape: BoxShape.circle,
-                                                border: Border.all(
-                                                    color: Theme.of(context)
-                                                        .scaffoldBackgroundColor,
-                                                    width: 3)),
-                                          ),
-                                        )
-                                      : Container()
+                                  // stories_data[index].isOnline
+                                  //     ? Positioned(
+                                  //         top: 38,
+                                  //         left: 42,
+                                  //         child: Container(
+                                  //           width: 20,
+                                  //           height: 20,
+                                  //           decoration: BoxDecoration(
+                                  //               color: Color(0xFF5AD439),
+                                  //               shape: BoxShape.circle,
+                                  //               border: Border.all(
+                                  //                   color: Theme.of(context)
+                                  //                       .scaffoldBackgroundColor,
+                                  //                   width: 3)),
+                                  //         ),
+                                  //       )
+                                  //     : Container()
                                 ],
                               ),
                             ),
@@ -159,6 +156,7 @@ class Stories extends StatelessWidget {
                                         .textTheme
                                         .headline1
                                         .color,
+                                    fontSize: 12,
                                   ),
                                   overflow: TextOverflow.ellipsis,
                                 ),

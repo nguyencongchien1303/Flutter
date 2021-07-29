@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:snapchat_clone/controller/switch_image_image_tag.dart';
 import 'package:snapchat_clone/data/profile_image.dart';
@@ -252,8 +253,8 @@ class GetBody extends StatelessWidget {
                   splashRadius: 20,
                   icon: GetBuilder<ControllerSwitchImageTag>(
                     builder: (index) {
-                      return Icon(
-                        FontAwesome.th,
+                      return SvgPicture.asset(
+                        'assets/icons/girl.svg',
                         color:
                             controller_switch_image_tag.imageTag.value == false
                                 ? Theme.of(context).textTheme.headline1.color
@@ -272,8 +273,8 @@ class GetBody extends StatelessWidget {
                   splashRadius: 20,
                   icon: GetBuilder<ControllerSwitchImageTag>(
                     builder: (index) {
-                      return Icon(
-                        FontAwesome.id_badge,
+                      return SvgPicture.asset(
+                        'assets/icons/tags.svg',
                         color:
                             controller_switch_image_tag.imageTag.value == true
                                 ? Theme.of(context).textTheme.headline1.color
@@ -341,10 +342,12 @@ class GetBody extends StatelessWidget {
 
   Widget getImages(size) {
     return Wrap(
-        direction: Axis.horizontal,
-        spacing: 3,
-        runSpacing: 3,
-        children: List.generate(images.length, (index) {
+      direction: Axis.horizontal,
+      spacing: 3,
+      runSpacing: 3,
+      children: List.generate(
+        images.length,
+        (index) {
           return Container(
             height: 150,
             width: (size.width - 6) / 3,
@@ -352,15 +355,19 @@ class GetBody extends StatelessWidget {
                 image: DecorationImage(
                     image: NetworkImage(images[index]), fit: BoxFit.cover)),
           );
-        }));
+        },
+      ),
+    );
   }
 
   Widget getImageWithTags(size) {
     return Wrap(
-        direction: Axis.horizontal,
-        spacing: 3,
-        runSpacing: 3,
-        children: List.generate(imageWithTags.length, (index) {
+      direction: Axis.horizontal,
+      spacing: 3,
+      runSpacing: 3,
+      children: List.generate(
+        imageWithTags.length,
+        (index) {
           return Container(
             height: 150,
             width: (size.width - 6) / 3,
@@ -369,7 +376,9 @@ class GetBody extends StatelessWidget {
                     image: NetworkImage(imageWithTags[index]),
                     fit: BoxFit.cover)),
           );
-        }));
+        },
+      ),
+    );
   }
 }
 
@@ -415,8 +424,8 @@ class GetAppbar extends StatelessWidget implements PreferredSizeWidget {
                 IconButton(
                   onPressed: () {},
                   splashRadius: 15,
-                  icon: Icon(
-                    FontAwesome.bars,
+                  icon: SvgPicture.asset(
+                    'assets/icons/menu.svg',
                     color: Theme.of(context).textTheme.headline1.color,
                   ),
                 ),

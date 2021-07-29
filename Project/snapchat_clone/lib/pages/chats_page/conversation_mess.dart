@@ -34,9 +34,7 @@ class ConversationMess extends StatelessWidget {
                         SlideAction(
                           child: Text("Delete"),
                           color: Color(0xFFEC4F5A),
-                          onTap: () {
-                            print("objectb");
-                          },
+                          onTap: () {},
                         )
                       ],
                     ),
@@ -79,8 +77,8 @@ class OnTapConversation extends StatelessWidget {
             child: Stack(
               children: [
                 Container(
-                  width: 50,
-                  height: 50,
+                  width: (size.width - 20) * 0.15,
+                  height: (size.width - 20) * 0.15,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
@@ -109,7 +107,7 @@ class OnTapConversation extends StatelessWidget {
             ),
           ),
           Container(
-            width: size.width - 60,
+            width: (size.width - 20) * 0.90 - 10,
             child: Stack(
               children: [
                 Padding(
@@ -120,9 +118,9 @@ class OnTapConversation extends StatelessWidget {
                       Text(
                         conversationList[index].name,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                           color: Theme.of(context).textTheme.headline1.color,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       Row(
@@ -134,8 +132,7 @@ class OnTapConversation extends StatelessWidget {
                               conversationList[index].lastMessage,
                               style: TextStyle(
                                 fontSize: 14,
-                                color:
-                                    Theme.of(context).textTheme.headline1.color,
+                                color: Color(0xffC8C8C8),
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -144,16 +141,14 @@ class OnTapConversation extends StatelessWidget {
                             ' • ',
                             style: TextStyle(
                               fontSize: 14,
-                              color:
-                                  Theme.of(context).textTheme.headline1.color,
+                              color: Color(0xffC8C8C8),
                             ),
                           ),
                           Text(
                             conversationList[index].lastMessageTime,
                             style: TextStyle(
                               fontSize: 14,
-                              color:
-                                  Theme.of(context).textTheme.headline1.color,
+                              color: Color(0xffC8C8C8),
                             ),
                           ),
                         ],
@@ -163,12 +158,13 @@ class OnTapConversation extends StatelessWidget {
                 ),
                 Positioned(
                   right: 0,
-                  bottom: 0,
+                  bottom: -7,
                   child: IconButton(
                     onPressed: () {},
                     icon: SvgPicture.asset(
                       'assets/icons/camera_outline.svg',
-                      color: Theme.of(context).textTheme.headline1.color,
+                      // color: Theme.of(context).textTheme.headline1.color,
+                      color: Color(0xffC8C8C8),
                     ),
                   ),
                 )

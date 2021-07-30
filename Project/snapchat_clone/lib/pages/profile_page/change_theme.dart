@@ -15,24 +15,6 @@ class ProfilePageScreen extends StatelessWidget {
       appBar: GetAppbar(),
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: GetBody(size: size),
-      // body: Center(
-      //   child: Column(
-      //     children: [
-      //       MaterialButton(
-      //         onPressed: () {
-      //           ThemeService().changeThemeMode();
-      //         },
-      //         child: Text('switch theme'),
-      //       ),
-      //       MaterialButton(
-      //         onPressed: () {
-      //           Get.to(SignInScreen());
-      //         },
-      //         child: Text('Log out'),
-      //       ),
-      //     ],
-      //   ),
-      // ),
     );
   }
 }
@@ -407,6 +389,7 @@ class GetAppbar extends StatelessWidget implements PreferredSizeWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).textTheme.headline1.color,
                   ),
                 )
               ],

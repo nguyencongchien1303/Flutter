@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-const Color primary = Color(0xFFe0c600);
 const Color white = Color(0xFFFFFFFF);
 const Color black = Color(0xFF000000);
 const Color darkGrey = Color(0xFF6e717b);
@@ -8,20 +7,29 @@ const Color purple = Color(0xFFab67c3);
 const Color blue = Color(0xFF0daff5);
 const Color green = Color(0xFF5eb592);
 
-// const Color colorsGradient = (colors: [
-//   Color(0xFFfeda75),
-//   Color(0xFFfa7e1e),
-//   Color(0xFFd62976),
-//   Color(0xFF962fbf),
-//   Color(0xFF4f5bd5),
-// ]);
+const Color primary = Color(0xff0095f6);
+const Color secondary = Color(0xffffffff);
 
-Map<String, Color> btnColorMap = {
-  "a": Color(0xFFfeda75),
-  "b": Color(0xFFfa7e1e),
-  "c": Color(0xFFd62976),
-  "d": Color(0xFF962fbf),
-  "e": Color(0xFF4f5bd5),
-};
+const Color textWhite = Color(0xffffffff);
+const Color textBlack = Color(0xff000000);
+const Color textGrey = Color(0xffC8C8C8);
 
-var colorsGradient = List<Map>.filled(20, btnColorMap);
+const Color bgWhite = Color(0xffffffff);
+const Color bgDark = Color(0xff000000);
+const Color bgGrey = Color(0xffC8C8C8);
+const Color bgLightGrey = Color(0xffFAFAFA);
+
+const bgStoryColors = [
+  const Color(0xffA844A1),
+  const Color(0xffAB429A),
+  const Color(0xffB43C88),
+  const Color(0xffC33269),
+  const Color(0xffD7243F),
+  const Color(0xffF9A326),
+  const Color(0xffF9DD26),
+];
+
+const Color success = Color(0xff44c93a);
+const Color danger = Color(0xffff4657);
+const Color info = Color(0xff5bc0de);
+const Color warning = Color(0xfffeba06);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:snapchat_clone/data/conversation.dart';
+import 'package:snapchat_clone/pages/chat_page_detail.dart/chat_page_detail_screen.dart';
 
 class ConversationMess extends StatelessWidget {
   final SlidableController controller;
@@ -67,6 +68,8 @@ class OnTapConversation extends StatelessWidget {
         final isClose = slidable.renderingMode == SlidableRenderingMode.none;
         if (isClose) {
           slidable.open();
+          Navigator.push(context,
+              MaterialPageRoute(builder: (_) => ChatPageDetailScreen()));
         }
         slidable.close();
       },
@@ -132,7 +135,8 @@ class OnTapConversation extends StatelessWidget {
                               conversationList[index].lastMessage,
                               style: TextStyle(
                                 fontSize: 14,
-                                color: Color(0xffC8C8C8),
+                                color:
+                                    Theme.of(context).textTheme.headline3.color,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -141,14 +145,16 @@ class OnTapConversation extends StatelessWidget {
                             ' • ',
                             style: TextStyle(
                               fontSize: 14,
-                              color: Color(0xffC8C8C8),
+                              color:
+                                  Theme.of(context).textTheme.headline3.color,
                             ),
                           ),
                           Text(
                             conversationList[index].lastMessageTime,
                             style: TextStyle(
                               fontSize: 14,
-                              color: Color(0xffC8C8C8),
+                              color:
+                                  Theme.of(context).textTheme.headline3.color,
                             ),
                           ),
                         ],
@@ -163,8 +169,7 @@ class OnTapConversation extends StatelessWidget {
                     onPressed: () {},
                     icon: SvgPicture.asset(
                       'assets/icons/camera_outline.svg',
-                      // color: Theme.of(context).textTheme.headline1.color,
-                      color: Color(0xffC8C8C8),
+                      color: Theme.of(context).textTheme.headline3.color,
                     ),
                   ),
                 )

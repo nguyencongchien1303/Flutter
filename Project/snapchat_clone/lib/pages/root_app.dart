@@ -17,6 +17,7 @@ class RootApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size.width - 40;
+    var screen = MediaQuery.of(context).viewPadding;
     return Scaffold(
       body: GetBuilder<ControllerSelectedBottomSheet>(
         builder: (controller) {
@@ -36,7 +37,7 @@ class RootApp extends StatelessWidget {
       bottomSheet: Container(
         color: Theme.of(context).scaffoldBackgroundColor,
         width: double.infinity,
-        height: 70,
+        height: 60 + screen.bottom,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           child: GetBuilder<ControllerSelectedBottomSheet>(
@@ -50,7 +51,14 @@ class RootApp extends StatelessWidget {
                       (index) {
                         return GestureDetector(
                           onTap: () {
-                            controllerRootApp.selectedBottomSheet(index);
+                            if (index == 2) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => CameraPageScreen()));
+                            } else {
+                              controllerRootApp.selectedBottomSheet(index);
+                            }
                           },
                           child: Column(
                             children: [

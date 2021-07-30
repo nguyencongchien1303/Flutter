@@ -7,13 +7,13 @@ class Themes {
     backgroundColor: Color(0xFF000000).withOpacity(0.05),
     textTheme: TextTheme(
       headline1: TextStyle(
-        color: Colors.black,
+        color: Color(0xFF262626),
       ),
       headline2: TextStyle(
         color: Colors.black,
       ),
       headline3: TextStyle(
-        color: Color(0xFF8E8E93),
+        color: Color(0xFF000000).withOpacity(0.4),
       ),
     ),
   );
@@ -23,10 +23,13 @@ class Themes {
     backgroundColor: Color(0xFFFFFFFF).withOpacity(0.2),
     textTheme: TextTheme(
       headline1: TextStyle(
-        color: Colors.white,
+        color: Color(0xFFF9F9F9),
       ),
       headline2: TextStyle(
         color: Colors.white.withOpacity(0.4),
+      ),
+      headline3: TextStyle(
+        color: Color(0xFFFFFFFF).withOpacity(0.6),
       ),
     ),
   );

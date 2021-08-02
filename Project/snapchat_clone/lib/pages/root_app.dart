@@ -18,6 +18,11 @@ class RootApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size.width - 40;
     var screen = MediaQuery.of(context).viewPadding;
+    double paddingBottom = 0;
+    if (screen.bottom > 0) {
+      paddingBottom = screen.bottom - 10;
+    }
+
     return Scaffold(
       body: GetBuilder<ControllerSelectedBottomSheet>(
         builder: (controller) {
@@ -27,7 +32,6 @@ class RootApp extends StatelessWidget {
               ChatsPageScreen(),
               SearchPageScreen(),
               CameraPageScreen(),
-              // Navigator.push(context, MaterialPageRoute(builder: (_) => CameraPageScreen())),
               PeoplePageScreen(),
               ProfilePageScreen()
             ],
@@ -37,9 +41,14 @@ class RootApp extends StatelessWidget {
       bottomSheet: Container(
         color: Theme.of(context).scaffoldBackgroundColor,
         width: double.infinity,
-        height: 60 + screen.bottom,
+        height: 50 + paddingBottom,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          padding: (paddingBottom > 0)
+              ? EdgeInsets.only(
+                  left: 20,
+                  top: 10,
+                )
+              : EdgeInsets.only(left: 20),
           child: GetBuilder<ControllerSelectedBottomSheet>(
             builder: (value) {
               return Row(
@@ -64,13 +73,11 @@ class RootApp extends StatelessWidget {
                             children: [
                               Container(
                                 width: size / 5,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 27,
-                                      width: 27,
-                                      child: controllerRootApp.selected.value ==
-                                              index
+                                child: SizedBox(
+                                  height: 27,
+                                  width: 27,
+                                  child:
+                                      controllerRootApp.selected.value == index
                                           ? SvgPicture.asset(
                                               iconItemsTouch[index],
                                               color: Theme.of(context)
@@ -85,8 +92,6 @@ class RootApp extends StatelessWidget {
                                                   .headline1
                                                   .color,
                                             ),
-                                    ),
-                                  ],
                                 ),
                               ),
                               SizedBox(height: 7),
@@ -153,23 +158,16 @@ class RootApp extends StatelessWidget {
                                       width: 28,
                                       height: 28,
                                       decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          image: DecorationImage(
-                                              image: NetworkImage(
-                                                  stories_data[0].avatar),
-                                              fit: BoxFit.cover)),
+                                        shape: BoxShape.circle,
+                                        image: DecorationImage(
+                                          image: NetworkImage(
+                                              stories_data[0].avatar),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                          // SizedBox(height: 7),
-                          // Container(
-                          //   width: 5,
-                          //   height: 5,
-                          //   decoration: BoxDecoration(
-                          //     color: Color(0xFFFE294D),
-                          //     shape: BoxShape.circle,
-                          //   ),
-                          // ),
                         ],
                       ),
                     ),

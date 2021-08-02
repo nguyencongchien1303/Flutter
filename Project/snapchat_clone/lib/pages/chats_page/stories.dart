@@ -6,7 +6,7 @@ class Stories extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController _searchController = new TextEditingController();
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.only(bottom: 10),
       child: Column(
         children: [
           Padding(

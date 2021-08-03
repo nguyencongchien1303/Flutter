@@ -95,16 +95,16 @@ class GetBody extends StatelessWidget {
                             Text(
                               "61",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
                               ),
                             ),
                             Text(
-                              "Posts",
+                              "Posts".tr,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
@@ -117,16 +117,16 @@ class GetBody extends StatelessWidget {
                             Text(
                               "612",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
                               ),
                             ),
                             Text(
-                              "Followers",
+                              "Followers".tr,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
@@ -139,16 +139,16 @@ class GetBody extends StatelessWidget {
                             Text(
                               "621",
                               style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
                               ),
                             ),
                             Text(
-                              "Following",
+                              "Following".tr,
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
                                 color:
                                     Theme.of(context).textTheme.headline1.color,
@@ -190,7 +190,7 @@ class GetBody extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    "Edit Profile",
+                    "Edit profile".tr,
                     style: TextStyle(
                       // fontWeight: FontWeight.bold,
                       color: Theme.of(context).textTheme.headline1.color,
@@ -203,7 +203,7 @@ class GetBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Story Highlinght",
+                    "Story Highlight".tr,
                     style: TextStyle(
                       color: Theme.of(context).textTheme.headline1.color,
                       fontWeight: FontWeight.bold,

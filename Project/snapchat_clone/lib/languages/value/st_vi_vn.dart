@@ -15,5 +15,14 @@ const Map<String, String> vi = {
   ' Sign up': " Đăng ký",
   "Name": "Tên",
   "Phone": "Số điện thoại",
-  "Already have an account?": "Đã có tài khoản?"
+  "Already have an account?": "Đã có tài khoản?",
+  "Search": "Tìm kiếm",
+  "Your Story": "Tin của bạn",
+  "Add story": "Thêm vào tin",
+  "Story": "Tin",
+  "Posts": "Bài viết",
+  "Followers": "Người theo dõi",
+  "Following": "Đang theo dõi",
+  "Edit profile": "Chỉnh sửa trang cá nhân",
+  "Story Highlight": "Tin nổi bật"
 };

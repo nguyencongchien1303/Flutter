@@ -15,5 +15,14 @@ const Map<String, String> en = {
   ' Sign up': " Sign up",
   "Name": "Name",
   "Phone": "Phone",
-  "Already have an account?": "Already have an account?"
+  "Already have an account?": "Already have an account?",
+  "Search": "Search",
+  "Your Story": "Your Story",
+  "Add story": "Thêm vào tin",
+  "Story": "Tin",
+  "Posts": "Posts",
+  "Followers": "Followers",
+  "Following": "Following",
+  "Edit profile": "Edit profile",
+  "Story Highlight": "Story Highlight"
 };

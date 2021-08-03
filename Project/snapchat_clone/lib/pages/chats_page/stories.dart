@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat_clone/data/stories_page/stories_data.dart';
+import 'package:get/get.dart';
 
 class Stories extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class Stories extends StatelessWidget {
                     Icons.search,
                     color: Color(0xFF8E8E93),
                   ),
-                  hintText: "Search",
+                  hintText: "Search".tr,
                   hintStyle: TextStyle(color: Color(0xFF8E8E93)),
                   border: InputBorder.none,
                 ),
@@ -63,7 +64,7 @@ class Stories extends StatelessWidget {
                       width: 75,
                       child: Align(
                         child: Text(
-                          'Your Story',
+                          "Your Story".tr,
                           style: TextStyle(
                             fontSize: 12,
                             color: Theme.of(context).textTheme.headline1.color,

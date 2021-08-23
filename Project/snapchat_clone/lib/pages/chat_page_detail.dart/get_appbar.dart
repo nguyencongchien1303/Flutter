@@ -45,7 +45,10 @@ class GetAppbar extends StatelessWidget implements PreferredSizeWidget {
                       Text(
                         chats[0]['username'],
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).textTheme.headline1.color,
+                        ),
                       ),
                       Text(
                         chats[0]['username'],
